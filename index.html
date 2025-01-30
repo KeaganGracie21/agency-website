@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#1E40AF" />
     <meta property="og:title" content="Innova Vision - Digital Marketing & Brand Strategy Agency" />
     <meta property="og:description" content="Expert digital marketing solutions that deliver real results for your business." />
-    <meta property="og:image" content="./innova logo.jpg" />
+    <meta property="og:image" content="assets/innova logo.jpg" />
     <meta property="og:url" content="https://innovavision.com" />
     
     <!-- Mobile Performance Optimizations -->
@@ -38,10 +38,306 @@
 
     <!-- Smooth scrolling for anchor links or scrollIntoView -->
     <style>
+      /* Smooth scrolling for the whole page */
       html {
         scroll-behavior: smooth;
       }
+
+      /* Hero section hover effects */
+      .hero-content {
+        transition: transform 0.3s ease-in-out;
+      }
+      .hero-content:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Services card hover effects */
+      .service-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid transparent;
+        background: white;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-color: #3B82F6;
+        background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+      }
+
+      /* About section image hover effect */
+      .about-image {
+        transition: transform 0.4s ease-in-out;
+      }
+      .about-image:hover {
+        transform: scale(1.05);
+      }
+
+      /* Process steps hover effect */
+      .process-step {
+        transition: all 0.3s ease;
+      }
+      .process-step:hover {
+        background-color: #F3F4F6;
+        transform: translateX(10px);
+      }
+
+      /* Contact form input effects */
+      .form-input {
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .form-input:focus {
+        border-color: #3B82F6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+
+      /* Button hover animations */
+      .btn-primary {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(45deg, #3B82F6, #2563EB);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(45deg, #2563EB, #1D4ED8);
+      }
+      .btn-primary:active {
+        transform: translateY(1px);
+      }
+
+      /* Testimonial card hover effects */
+      .testimonial-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(145deg, #ffffff, #f0f9ff);
+      }
+
+      /* Footer link hover effects */
+      .footer-link {
+        transition: color 0.2s ease;
+        position: relative;
+      }
+      .footer-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: #3B82F6;
+        transition: width 0.3s ease;
+      }
+      .footer-link:hover:after {
+        width: 100%;
+      }
+
+      /* Section transitions */
+      .section-fade {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.6s ease-out;
+      }
+      .section-fade.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Add a debug style to see section boundaries */
+      section {
+        min-height: 200px;
+        border: 1px solid transparent;
+      }
+
+      /* Why Choose Us Cards */
+      .feature-card {
+        transition: all 0.4s ease;
+        border-radius: 1rem;
+        border: 1px solid #e5e7eb;
+        background: white;
+      }
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px -8px rgba(59, 130, 246, 0.25);
+        border-color: #3B82F6;
+        background: linear-gradient(165deg, #ffffff, #f0f9ff);
+      }
+
+      /* Portfolio Items */
+      .portfolio-item {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+      }
+      .portfolio-item::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .portfolio-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      }
+      .portfolio-item:hover::after {
+        opacity: 1;
+      }
+
+      /* Contact Form Styling */
+      .contact-form input,
+      .contact-form textarea {
+        transition: all 0.3s ease;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.5rem;
+        background: #f9fafb;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #3B82F6;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        background: white;
+      }
+      .contact-form button {
+        transition: all 0.3s ease;
+        background: linear-gradient(45deg, #3B82F6, #2563EB);
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(45deg, #2563EB, #1D4ED8);
+      }
+      .contact-form button:active {
+        transform: translateY(1px);
+      }
+
+      /* Section Headers */
+      .section-header {
+        position: relative;
+        display: inline-block;
+      }
+      .section-header::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 60%;
+        height: 3px;
+        background: linear-gradient(90deg, #3B82F6, transparent);
+        border-radius: 2px;
+      }
+
+      /* Enhanced List Items */
+      .feature-list li {
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
+      .feature-list li:hover {
+        background: rgba(59, 130, 246, 0.1);
+        transform: translateX(8px);
+      }
+
+      /* Services Section Styling */
+      .services-grid {
+        display: grid;
+        gap: 2rem;
+        padding: 1rem;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid #e5e7eb;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: #3B82F6;
+        transition: height 0.4s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        border-color: #3B82F6;
+        background: linear-gradient(145deg, #ffffff, #f8faff);
+      }
+
+      .service-card:hover::before {
+        height: 100%;
+      }
+
+      .service-icon {
+        background: #EFF6FF;
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover .service-icon {
+        background: #3B82F6;
+        color: white;
+        transform: rotate(5deg);
+      }
+
+      .service-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .service-card:hover .service-title {
+        color: #3B82F6;
+      }
+
+      .service-description {
+        color: #6B7280;
+        line-height: 1.6;
+      }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-fade').forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
   </head>
 
   <body class="bg-gray-50 text-gray-900">
@@ -104,15 +400,16 @@
       function LandingPage() {
         return (
           <div>
-            {/* Hero Section - Enhanced mobile responsiveness */}
+            {/* Hero Section */}
             <section className="relative bg-black text-white py-12 md:py-20">
               <div className="container mx-auto px-4 sm:px-6 text-center">
-                <img
-                  src="./innova logo.jpg"
-                  alt="Innova Vision Logo"
-                  className="mx-auto mb-6 md:mb-8 w-48 md:w-72 h-auto"
-                  loading="eager"
-                />
+                <div className="w-64 md:w-96 mx-auto mb-6">
+                  <img
+                    src="assets/innova logo.jpg"
+                    alt="Innova Vision Logo"
+                    className="w-full h-auto"
+                  />
+                </div>
                 <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
                   Empowering Businesses with Vision and Innovation
                 </h1>
@@ -130,329 +427,287 @@
             </section>
 
             {/* Services Section */}
-            <FadeInSection>
-              <section id="services" className="bg-gray-100 py-16">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                    Our Services
-                  </h2>
-                  <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-                    From website creation to social media management, we provide
-                    comprehensive digital marketing solutions tailored to your needs.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[
-                      {
-                        title: 'Website Creation',
-                        description:
-                          'Modern, responsive websites tailored to represent your unique brand and drive conversions.'
-                      },
-                      {
-                        title: 'Google Ads',
-                        description:
-                          'Maximize your visibility on the worlds largest search engine with expert PPC strategies.'
-                      },
-                      {
-                        title: 'SEO',
-                        description:
-                          'Get found online with proven strategies that rank your business higher on search engines.'
-                      },
-                      {
-                        title: 'Facebook Ads',
-                        description:
-                          'Engage your audience with highly targeted social media campaigns that deliver real results.'
-                      },
-                      {
-                        title: 'Social Media Management',
-                        description:
-                          'Build and maintain a strong online presence with consistent, engaging, and strategic content.'
-                      }
-                    ].map((service, index) => (
-                      <div
-                        key={index}
-                        className="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105"
-                      >
-                        <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                        <p className="text-gray-600 mb-4">{service.description}</p>
-                        {/* This button also scrolls to the contact form */}
-                        <button
-                          onClick={scrollToContact}
-                          className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 ease-in-out px-4 py-2 rounded-md text-white font-medium"
-                        >
-                          Learn More
-                        </button>
-                      </div>
-                    ))}
+            <section id="services" className="py-20 bg-gray-50">
+              <div className="container mx-auto px-4">
+                <h2 className="text-4xl font-bold text-center mb-12 section-header">Our Services</h2>
+                <div className="services-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  
+                  {/* Web Development Card */}
+                  <div className="service-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Web Development</h3>
+                    <p className="service-description">
+                      Transform your online presence with custom-built, responsive websites that combine stunning design with powerful functionality. We specialize in fast-loading, SEO-optimized sites that drive conversions and deliver exceptional user experiences across all devices.
+                    </p>
                   </div>
-                </div>
-              </section>
-            </FadeInSection>
 
-            {/* About Section */}
-            <FadeInSection>
-              <section id="about" className="bg-white py-16">
-                <div className="container mx-auto px-4 text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                    Meet Keagan Gracie – A Legacy of Excellence
-                  </h2>
-                  <p className="text-gray-700 max-w-3xl mx-auto mb-8">
+                  {/* Digital Marketing Card */}
+                  <div className="service-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Digital Marketing</h3>
+                    <p className="service-description">
+                      Maximize your online reach with our comprehensive digital marketing solutions. We specialize in Google Ads to capture high-intent search traffic, and Facebook Ads for precise audience targeting and brand awareness. Our SEO optimization services ensure your website ranks higher in search results through strategic keyword research, technical optimization, and quality content creation. From managing your ad campaigns to improving your organic search presence, we deliver measurable results that grow your business.
+                    </p>
+                  </div>
+
+                  {/* Brand Design Card */}
+                  <div className="service-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Brand Design</h3>
+                    <p className="service-description">
+                      Build a memorable brand identity that resonates with your target audience. Our brand design services include logo creation, visual identity systems, brand guidelines, marketing materials, and cohesive design solutions that tell your unique story and establish lasting connections with your customers.
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+            {/* About Section - Simple image implementation */}
+            <section id="about" className="bg-white py-16">
+              <div className="container mx-auto px-4 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Meet Keagan Gracie – A Legacy of Excellence
+                </h2>
+                <div className="max-w-3xl mx-auto">
+                  <p className="text-gray-700 mb-8">
                     Keagan Gracie is the President and Founder of Innova Vision, with over 6 years of expert-level experience in digital marketing. He is highly skilled at crafting tailored marketing solutions that address the unique needs of each business, leveraging his ability to envision innovative strategies for long-term success. Keagan's approach to digital marketing is rooted in precision and a commitment to achieving exceptional results.
                   </p>
-                  <p className="text-gray-700 max-w-3xl mx-auto mb-8">
+                  <p className="text-gray-700 mb-12">
                     His upbringing within the Gracie family, pioneers of Brazilian Jiu-Jitsu, has shaped him into an exceptional individual, instilling discipline, resilience, and a relentless drive to improve and innovate. These core values continue to guide his work in transforming businesses through cutting-edge digital marketing.
                   </p>
-                  {/* Head Shot Image - Added sophisticated hover effect */}
+                </div>
+                <div className="max-w-xs mx-auto">
                   <img
-                    src="./head shot.jpg"
+                    src="./assets/headshot.jpg"
                     alt="Keagan Gracie"
-                    className="w-72 h-auto max-h-[400px] object-cover mx-auto rounded-3xl 
-                      shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
-                      hover:shadow-[0_20px_40px_rgba(0,118,255,0.25)] 
-                      transition-all duration-500 ease-out
-                      hover:scale-[1.02] hover:-rotate-1
-                      hover:brightness-105
-                      cursor-pointer"
-                    style={{
-                      objectPosition: 'center 10%',
-                      objectFit: 'contain'
-                    }}
+                    className="w-full h-auto rounded-3xl about-image"
+                    loading="eager"
                   />
                 </div>
-              </section>
-            </FadeInSection>
+              </div>
+            </section>
 
             {/* Testimonials Section */}
-            <FadeInSection>
-              <section id="testimonials" className="bg-gray-100 py-16">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                    What Our Clients Say
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[
-                      {
-                        name: 'David Chen',
-                        feedback:
-                          'Innova Vision completely transformed our online presence. Keagan\'s expertise and unique approach gave us the growth we needed!'
-                      },
-                      {
-                        name: 'Sarah Thompson',
-                        feedback:
-                          'Working with Innova Vision was a game-changer. Their strategies delivered measurable results!'
-                      },
-                      {
-                        name: 'Robert Martinez',
-                        feedback:
-                          'Keagan\'s dedication and precision in digital marketing are unmatched. Highly recommend!'
-                      }
-                    ].map((testimonial, index) => (
-                      <div
-                        key={index}
-                        className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300"
-                      >
-                        <p className="text-gray-700 italic mb-4">"{testimonial.feedback}"</p>
-                        <h4 className="text-lg font-bold">- {testimonial.name}</h4>
-                      </div>
-                    ))}
-                  </div>
+            <section id="testimonials" className="bg-gray-100 py-16">
+              <div className="container mx-auto px-4">
+                <h2 className="section-header text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[
+                    {
+                      name: 'David Chen',
+                      feedback:
+                        'Innova Vision completely transformed our online presence. Keagan\'s expertise and unique approach gave us the growth we needed!'
+                    },
+                    {
+                      name: 'Sarah Thompson',
+                      feedback:
+                        'Working with Innova Vision was a game-changer. Their strategies delivered measurable results!'
+                    },
+                    {
+                      name: 'Robert Martinez',
+                      feedback:
+                        'Keagan\'s dedication and precision in digital marketing are unmatched. Highly recommend!'
+                    }
+                  ].map((testimonial, index) => (
+                    <div
+                      key={index}
+                      className="testimonial-card p-6"
+                    >
+                      <p className="text-gray-700 italic mb-4">"{testimonial.feedback}"</p>
+                      <h4 className="text-lg font-bold">- {testimonial.name}</h4>
+                    </div>
+                  ))}
                 </div>
-              </section>
-            </FadeInSection>
+              </div>
+            </section>
 
             {/* Why Choose Us Section */}
-            <FadeInSection>
-              <section className="bg-white py-16">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                    Why Choose Us
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                    {[
-                      'Proven expertise in digital marketing and strategy.',
-                      'Personalized solutions tailored to your business goals.',
-                      'Commitment to measurable results and transparency.',
-                      'A legacy of innovation inspired by the Gracie familys values.'
-                    ].map((point, index) => (
-                      <div key={index} className="flex items-start">
-                        <svg
-                          className="w-6 h-6 text-blue-600 mr-3 mt-1"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p className="text-gray-700">{point}</p>
-                      </div>
-                    ))}
+            <section className="bg-white py-16">
+              <div className="container mx-auto px-4">
+                <h2 className="section-header text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Expertise Card */}
+                  <div className="feature-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Expert Team</h3>
+                    <p className="service-description">Our seasoned professionals bring years of industry experience to deliver exceptional results for your business.</p>
+                  </div>
+
+                  {/* Innovation Card */}
+                  <div className="feature-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Innovation First</h3>
+                    <p className="service-description">We stay ahead of digital trends to ensure your business remains competitive in today's fast-paced market.</p>
+                  </div>
+
+                  {/* Results Card */}
+                  <div className="feature-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Proven Results</h3>
+                    <p className="service-description">Our track record speaks for itself with measurable success stories and satisfied clients across industries.</p>
+                  </div>
+
+                  {/* Custom Solutions Card */}
+                  <div className="feature-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Custom Solutions</h3>
+                    <p className="service-description">Every business is unique, and we tailor our strategies to match your specific goals and challenges.</p>
+                  </div>
+
+                  {/* Data-Driven Card */}
+                  <div className="feature-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Data-Driven</h3>
+                    <p className="service-description">We make strategic decisions based on real data and analytics to maximize your return on investment.</p>
+                  </div>
+
+                  {/* Support Card */}
+                  <div className="feature-card">
+                    <div className="service-icon">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"></path>
+                        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="service-title">Dedicated Support</h3>
+                    <p className="service-description">Our team provides responsive, ongoing support to ensure your continued success and growth.</p>
                   </div>
                 </div>
-              </section>
-            </FadeInSection>
+              </div>
+            </section>
 
-            {/* Portfolio Section - Mobile optimized */}
-            <FadeInSection>
-              <section id="portfolio" className="bg-gray-100 py-16">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                    Our Portfolio
-                  </h2>
-                  <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-                    Explore a selection of projects that showcase our expertise and proven track record.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    {[
-                      {
-                        id: 1,
-                        title: 'Startup Launch',
-                        description: 'We built a comprehensive digital strategy for this new startup, including web design and social campaigns.',
-                        img: './portfolio-startup.jpg',
-                        icon: (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        )
-                      },
-                      {
-                        id: 2,
-                        title: 'E-commerce Growth',
-                        description: 'Implemented a full-scale SEO and PPC campaign for an online retailer, boosting sales by 50%.',
-                        img: './portfolio-ecommerce.jpg',
-                        icon: (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        )
-                      },
-                      {
-                        id: 3,
-                        title: 'Local Business Revamp',
-                        description: 'Helped a local bakery modernize its website and ran targeted Facebook ads to expand their customer base.',
-                        img: './portfolio-localbiz.jpg',
-                        icon: (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        )
-                      }
-                    ].map(project => (
-                      <div key={project.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 relative group">
-                        <div className="flex items-start space-x-4">
-                          {/* Left icon */}
-                          <div className="bg-white p-3 rounded-xl shadow-md 
-                            transform transition-all duration-300 ease-out
-                            group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg
-                            group-hover:text-blue-600 flex-shrink-0">
-                            <svg className="w-8 h-8 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              {project.icon}
-                            </svg>
-                          </div>
-                          
-                          {/* Content */}
-                          <div className="flex-grow">
-                            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                            <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-                            <img
-                              src={project.img}
-                              alt={project.title}
-                              className="rounded-md mb-4 w-full"
-                            />
-                            <button
-                              onClick={scrollToContact}
-                              className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 ease-in-out px-4 py-2 rounded-md text-white font-medium"
-                            >
-                              View Case Study
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+            {/* Portfolio Section */}
+            <section id="portfolio" className="bg-gray-100 py-16">
+              <div className="container mx-auto px-4">
+                <h2 className="section-header text-3xl font-bold text-center mb-12">Our Portfolio</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[
+                    {
+                      id: 1,
+                      title: 'Startup Launch',
+                      description: 'We built a comprehensive digital strategy for this new startup, including web design and social campaigns.'
+                    },
+                    {
+                      id: 2,
+                      title: 'E-commerce Growth',
+                      description: 'Implemented a full-scale SEO and PPC campaign for an online retailer, boosting sales by 50%.'
+                    },
+                    {
+                      id: 3,
+                      title: 'Local Business Revamp',
+                      description: 'Helped a local bakery modernize its website and ran targeted Facebook ads to expand their customer base.'
+                    }
+                  ].map(project => (
+                    <div key={project.id} className="portfolio-item p-6">
+                      <h3 className="text-xl font-semibold mb-4">{project.title}</h3>
+                      <p className="text-gray-600 mb-6">{project.description}</p>
+                      <button
+                        onClick={scrollToContact}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md"
+                      >
+                        View Case Study
+                      </button>
+                    </div>
+                  ))}
                 </div>
-              </section>
-            </FadeInSection>
+              </div>
+            </section>
 
-           {/* Contact Section (Formspree) */}
-<FadeInSection>
-  <section id="contact-section" className="bg-white py-16">
-    <div className="container mx-auto px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Let's Elevate Your Brand Together
-      </h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault(); // Prevent default submission behavior
-          const formData = new FormData(e.target);
+            {/* Contact Section */}
+            <section id="contact-section" className="bg-white py-16">
+              <div className="container mx-auto px-4 text-center">
+                <h2 className="section-header text-3xl font-bold mb-12">Get In Touch</h2>
+                <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+                  <input type="hidden" name="form-name" value="contact" />
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      required
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your email"
+                      required
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Your phone number"
+                      required
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      name="message"
+                      placeholder="Tell me about your business and how we can help. What services are you interested in? What are your goals?"
+                      required
+                      rows="4"
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                  >
+                    Send Message
+                  </button>
+                </form>
 
-          fetch("https://formspree.io/f/xzzdrvak", {
-            method: "POST",
-            body: formData,
-            headers: { Accept: "application/json" },
-          })
-            .then((response) => {
-              if (response.ok) {
-                document.getElementById("thank-you-message").style.display =
-                  "block";
-                e.target.reset(); // Clear the form
-              } else {
-                alert("Something went wrong. Please try again.");
-              }
-            })
-            .catch(() => {
-              alert("An error occurred. Please try again.");
-            });
-        }}
-        className="max-w-lg mx-auto space-y-3 md:space-y-4 px-4 sm:px-0"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          className="w-full px-4 py-2 md:py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          required
-          aria-label="Name"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="w-full px-4 py-2 md:py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          required
-          aria-label="Email"
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone Number"
-          className="w-full px-4 py-2 md:py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          aria-label="Phone Number"
-        />
-        <textarea
-          name="message"
-          placeholder="Message"
-          rows="4"
-          className="w-full px-4 py-2 md:py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          required
-          aria-label="Message"
-        ></textarea>
-        <button
-          type="submit"
-          className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 ease-in-out px-6 py-3 rounded-md text-white font-semibold w-full"
-        >
-          Submit
-        </button>
-      </form>
+                {/* Thank-You Message */}
+                <div
+                  id="thank-you-message"
+                  style={{ display: "none" }}
+                  className="text-green-600 mt-6 font-semibold"
+                >
+                  Thank you for reaching out! We'll get back to you soon.
+                </div>
+              </div>
+            </section>
 
-      {/* Thank-You Message */}
-      <div
-        id="thank-you-message"
-        style={{ display: "none" }}
-        className="text-green-600 mt-6 font-semibold"
-      >
-        Thank you for reaching out! We'll get back to you soon.
-      </div>
-    </div>
-  </section>
-</FadeInSection>
             {/* Footer - Mobile responsive */}
             <footer className="bg-gray-900 text-white py-6 md:py-8">
               <div className="container mx-auto px-4">
@@ -463,7 +718,7 @@
                       e.preventDefault();
                       document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="hover:underline cursor-pointer"
+                    className="hover:underline cursor-pointer footer-link"
                   >
                     Services
                   </a>
@@ -473,7 +728,7 @@
                       e.preventDefault();
                       document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="hover:underline cursor-pointer"
+                    className="hover:underline cursor-pointer footer-link"
                   >
                     About
                   </a>
@@ -483,7 +738,7 @@
                       e.preventDefault();
                       document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="hover:underline cursor-pointer"
+                    className="hover:underline cursor-pointer footer-link"
                   >
                     Testimonials
                   </a>
@@ -493,7 +748,7 @@
                       e.preventDefault();
                       document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="hover:underline cursor-pointer"
+                    className="hover:underline cursor-pointer footer-link"
                   >
                     Portfolio
                   </a>
@@ -503,7 +758,7 @@
                       e.preventDefault();
                       document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="hover:underline cursor-pointer"
+                    className="hover:underline cursor-pointer footer-link"
                   >
                     Contact
                   </a>
@@ -526,7 +781,7 @@
                     href="https://www.instagram.com/innovavisiion/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:opacity-75 flex items-center"
+                    className="hover:opacity-75 flex items-center footer-link"
                   >
                     Instagram
                   </a>
